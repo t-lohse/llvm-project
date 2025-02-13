@@ -32,9 +32,13 @@ Clang-Tidy Checks
    portability/*
    readability/*
    zircon/*
+   tlohse/*
 
 .. csv-table::
    :header: "Name", "Offers fixes"
+
+   :doc:`tlohse-deref-pointer <tlohse/deref-pointer>`, "Yes"
+
 
    :doc:`abseil-cleanup-ctad <abseil/cleanup-ctad>`, "Yes"
    :doc:`abseil-duration-addition <abseil/duration-addition>`, "Yes"
