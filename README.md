@@ -1,3 +1,6 @@
+This is a fork from the (LLVM 19.1.7 release)[https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.7] (commit hash `cd70802`).
+This projects is part of my Master's thesis about safety in C++.
+
 # The LLVM Compiler Infrastructure
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/llvm/llvm-project/badge)](https://securityscorecards.dev/viewer/?uri=github.com/llvm/llvm-project)
