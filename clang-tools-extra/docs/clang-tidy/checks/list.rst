@@ -39,7 +39,6 @@ Clang-Tidy Checks
 
    :doc:`tlohse-deref-pointer <tlohse/deref-pointer>`, "Yes"
 
-
    :doc:`abseil-cleanup-ctad <abseil/cleanup-ctad>`, "Yes"
    :doc:`abseil-duration-addition <abseil/duration-addition>`, "Yes"
    :doc:`abseil-duration-comparison <abseil/duration-comparison>`, "Yes"
@@ -409,6 +408,42 @@ Check aliases
 
 .. csv-table::
    :header: "Name", "Redirect", "Offers fixes"
+
+   :doc:`tlohse-assignment-in-if-condition <tlohse/assignment-in-if-condition>`, :doc:`bugprone-assignment-in-if-condition <bugprone/assignment-in-if-condition>`,
+   :doc:`tlohse-casting-through-void <tlohse/casting-through-void>`, :doc:`bugprone-casting-through-void <bugprone/casting-through-void>`,
+   :doc:`tlohse-compare-pointer-to-member-virtual-function <tlohse/compare-pointer-to-member-virtual-function>`, :doc:`bugprone-compare-pointer-to-member-virtual-function <bugprone/compare-pointer-to-member-virtual-function>`,
+   :doc:`tlohse-copy-constructor-init <tlohse/copy-constructor-init>`, :doc:`bugprone-copy-constructor-init <bugprone/copy-constructor-init>`, Yes
+   :doc:`tlohse-dangling-handle <tlohse/dangling-handle>`, :doc:`bugprone-dangling-handle <bugprone/dangling-handle>`,
+   :doc:`tlohse-implicit-widening-of-multiplication-result <tlohse/implicit-widening-of-multiplication-result>`, :doc:`bugprone-implicit-widening-of-multiplication-result <bugprone/implicit-widening-of-multiplication-result>`, Yes
+   :doc:`tlohse-integer-division <tlohse/integer-division>`, :doc:`bugprone-integer-division <bugprone/integer-division>`,
+   :doc:`tlohse-misplaced-widening-cast <tlohse/misplaced-widening-cast>`, :doc:`bugprone-misplaced-widening-cast <bugprone/misplaced-widening-cast>`,
+   :doc:`tlohse-multi-level-implicit-pointer-conversion <tlohse/multi-level-implicit-pointer-conversion>`, :doc:`bugprone-multi-level-implicit-pointer-conversion <bugprone/multi-level-implicit-pointer-conversion>`,
+   :doc:`tlohse-parent-virtual-call <tlohse/parent-virtual-call>`, :doc:`bugprone-parent-virtual-call <bugprone/parent-virtual-call>`,Yes
+   :doc:`tlohse-unsafe-functions <tlohse/unsafe-functions>`, :doc:`bugprone-unsafe-functions <bugprone/unsafe-functions>`,
+   :doc:`tlohse-use-after-move <tlohse/use-after-move>`, :doc:`bugprone-use-after-move <bugprone/use-after-move>`,
+   :doc:`tlohse-avoid-goto <tlohse/avoid-goto>`, :doc:`cppcoreguidelines-avoid-goto <cppcoreguidelines/avoid-goto>`,
+   :doc:`tlohse-avoid-non-const-global-variables <tlohse/avoid-non-const-global-variables>`, :doc:`cppcoreguidelines-avoid-non-const-global-variables <cppcoreguidelines/avoid-non-const-global-variables>`,
+   :doc:`tlohse-init-variables <tlohse/init-variables>`, :doc:`cppcoreguidelines-init-variables <cppcoreguidelines/init-variables>`,Yes
+   :doc:`tlohse-missing-std-forward <tlohse/missing-std-forward>`, :doc:`cppcoreguidelines-missing-std-forward <cppcoreguidelines/missing-std-forward>`,
+   :doc:`tlohse-no-malloc <tlohse/no-malloc>`, :doc:`cppcoreguidelines-no-malloc <cppcoreguidelines/no-malloc>`,
+   :doc:`tlohse-prefer-member-initializer <tlohse/prefer-member-initializer>`, :doc:`cppcoreguidelines-prefer-member-initializer <cppcoreguidelines/prefer-member-initializer>`,Yes
+   :doc:`tlohse-pro-bounds-array-to-pointer-decay <tlohse/pro-bounds-array-to-pointer-decay>`, :doc:`cppcoreguidelines-pro-bounds-array-to-pointer-decay <cppcoreguidelines/pro-bounds-array-to-pointer-decay>`,
+   :doc:`tlohse-pro-bounds-constant-array-index <tlohse/pro-bounds-constant-array-index>`, :doc:`cppcoreguidelines-pro-bounds-constant-array-index <cppcoreguidelines/pro-bounds-constant-array-index>`,Yes
+   :doc:`tlohse-pro-bounds-pointer-arithmetic <tlohse/pro-bounds-pointer-arithmetic>`, :doc:`cppcoreguidelines-pro-bounds-pointer-arithmetic <cppcoreguidelines/pro-bounds-pointer-arithmetic>`,
+   :doc:`tlohse-pro-type-const-cast <tlohse/pro-type-const-cast>`, :doc:`cppcoreguidelines-pro-type-const-cast <cppcoreguidelines/pro-type-const-cast>`,
+   :doc:`tlohse-pro-type-cstyle-cast <tlohse/pro-type-cstyle-cast>`, :doc:`cppcoreguidelines-pro-type-cstyle-cast <cppcoreguidelines/pro-type-cstyle-cast>`,Yes
+   :doc:`tlohse-pro-type-member-init <tlohse/pro-type-member-init>`, :doc:`cppcoreguidelines-pro-type-member-init <cppcoreguidelines/pro-type-member-init>`,Yes
+   :doc:`tlohse-pro-type-reinterpret-cast <tlohse/pro-type-reinterpret-cast>`, :doc:`cppcoreguidelines-pro-type-reinterpret-cast <cppcoreguidelines/pro-type-reinterpret-cast>`,
+   :doc:`tlohse-pro-type-static-cast-downcast <tlohse/pro-type-static-cast-downcast>`, :doc:`cppcoreguidelines-pro-type-static-cast-downcast <cppcoreguidelines/pro-type-static-cast-downcast>`,Yes
+   :doc:`tlohse-pro-type-union-access <tlohse/pro-type-union-access>`, :doc:`cppcoreguidelines-pro-type-union-access <cppcoreguidelines/pro-type-union-access>`,
+   :doc:`tlohse-pro-type-vararg <tlohse/pro-type-vararg>`, :doc:`cppcoreguidelines-pro-type-vararg <cppcoreguidelines/pro-type-vararg>`,
+   :doc:`tlohse-virtual-class-destructor <tlohse/virtual-class-destructor>`, :doc:`cppcoreguidelines-virtual-class-destructor <cppcoreguidelines/virtual-class-destructor>`,Yes
+   :doc:`tlohse-virtual-inheritance <tlohse/virtual-inheritance>`, :doc:`fuchsia-virtual-inheritance <fuchsia/virtual-inheritance>`,
+   :doc:`tlohse-runtime-int <tlohse/runtime-int>`, :doc:`google-runtime-int <google/runtime-int>`,
+   :doc:`tlohse-exception-baseclass <tlohse/exception-baseclass>`, :doc:`hicpp-exception-baseclass <hicpp/exception-baseclass>`,
+   :doc:`tlohse-no-assembler <tlohse/no-assembler>`, :doc:`hicpp-no-assembler <hicpp/no-assembler>`,
+   :doc:`tlohse-signed-bitwise <tlohse/signed-bitwise>`, :doc:`hicpp-signed-bitwise <hicpp/signed-bitwise>`,
+   :doc:`tlohse-avoid-c-arrays <tlohse/avoid-c-arrays>`, :doc:`modernize-avoid-c-arrays <modernize/avoid-c-arrays>`,
 
    :doc:`bugprone-narrowing-conversions <bugprone/narrowing-conversions>`, :doc:`cppcoreguidelines-narrowing-conversions <cppcoreguidelines/narrowing-conversions>`,
    :doc:`cert-con36-c <cert/con36-c>`, :doc:`bugprone-spuriously-wake-up-functions <bugprone/spuriously-wake-up-functions>`,
