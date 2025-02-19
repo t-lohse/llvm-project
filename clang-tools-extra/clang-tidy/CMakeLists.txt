@@ -77,7 +77,9 @@ add_subdirectory(performance)
 add_subdirectory(portability)
 add_subdirectory(readability)
 add_subdirectory(zircon)
+add_subdirectory(tlohse)
 set(ALL_CLANG_TIDY_CHECKS
+  clangTidyTLohseModule
   clangTidyAndroidModule
   clangTidyAbseilModule
   clangTidyAlteraModule

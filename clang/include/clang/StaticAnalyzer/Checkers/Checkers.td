@@ -1796,3 +1796,53 @@ def UncountedLocalVarsChecker : Checker<"UncountedLocalVarsChecker">,
   Documentation<HasDocumentation>;
 
 } // end alpha.webkit
+
+//===----------------------------------------------------------------------===//
+// TLohse checkers.
+//===----------------------------------------------------------------------===//
+
+def TLohse : Package<"tlohse">,
+  PackageOptions<[]>;
+
+let ParentPackage = TLohse in {
+    // TODO: Either remove file or implement something
+    // def TlohseChecker : Checker<"TlohseChecker">,
+    //   HelpText<"best ever">,
+    //   Documentation<HasDocumentation>;
+
+    def NullDereferenceAlias : Checker<"NullDereference">,
+        HelpText<"Alias for nullability.NullableDereferenced">,
+        Documentation<DocumentationEnum<DereferenceChecker.Documentation>>;
+
+    def BitwiseShiftCheckerAlias : Checker<"BitwiseShift">,
+        HelpText<"Alias for core.BitwiseShift">,
+        Documentation<DocumentationEnum<BitwiseShiftChecker.Documentation>>;
+
+    def StackAddrEscapeCheckerAlias : Checker<"StackAddressEscape">,
+        HelpText<"Alias for core.StackAddressEscape">,
+        Documentation<DocumentationEnum<StackAddrEscapeChecker.Documentation>>;
+
+    def InnerPointerCheckerAlias : Checker<"InnerPointer">,
+          HelpText<"Alias for cplusplus.InnerPointer">,
+          Documentation<DocumentationEnum<InnerPointerChecker.Documentation>>;
+
+    def UninitializedObjectCheckerAlias : Checker<"UninitializedObject">,
+          HelpText<"Alias for optin.cplusplus.UninitializedObject">,
+          Documentation<DocumentationEnum<UninitializedObjectChecker.Documentation>>;
+
+    def ArrayBoundCheckerAlias : Checker<"ArrayBound">,
+          HelpText<"Alias for security.ArrayBound">,
+          Documentation<DocumentationEnum<ArrayBoundChecker.Documentation>>;
+
+
+ // This no work, just make a alias class that inherits from those that I want to alias
+ // def NullabilityBase2 : Checker<"NullabilityBase">,
+ //     HelpText<"Stores information during the analysis about nullability.">,
+ //     Documentation<NotDocumented>,
+ //     Hidden;
+//
+ //   def NullableDereferencedChecker2 : Checker<"NullableDereferenced">,
+ //     HelpText<"Warns when a nullable pointer is dereferenced.">,
+ //     Dependencies<[NullabilityBase2]>,
+ //     Documentation<HasDocumentation>;
+}

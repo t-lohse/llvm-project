@@ -140,6 +140,13 @@ add_clang_library(clangStaticAnalyzerCheckers
   WebKit/UncountedCallArgsChecker.cpp
   WebKit/UncountedLambdaCapturesChecker.cpp
   WebKit/UncountedLocalVarsChecker.cpp
+        #tlohse/TLohseChecker.cpp
+        tlohse/NullDereferenceAlias.cpp
+        tlohse/BitwiseShiftCheckerAlias.cpp
+        tlohse/StackAddressEscapeCheckerAlias.cpp
+        tlohse/InnerPointerCheckerAlias.cpp
+        tlohse/UninitializedObjectCheckerAlias.cpp
+        tlohse/ArrayBoundCheckerAlias.cpp
 
   LINK_LIBS
   clangAST
