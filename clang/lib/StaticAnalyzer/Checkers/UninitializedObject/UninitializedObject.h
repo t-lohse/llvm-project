@@ -70,12 +70,25 @@
 namespace clang {
 namespace ento {
 
+
 struct UninitObjCheckerOptions {
   bool IsPedantic = false;
   bool ShouldConvertNotesToWarnings = false;
   bool CheckPointeeInitialization = false;
   std::string IgnoredRecordsWithFieldPattern;
   bool IgnoreGuardedFields = false;
+};
+
+class UninitializedObjectChecker
+    : public Checker<check::EndFunction, check::DeadSymbols> {
+  const BugType BT_uninitField{this, "Uninitialized fields"};
+
+public:
+  // The fields of this struct will be initialized when registering the checker.
+  UninitObjCheckerOptions Opts;
+
+  void checkEndFunction(const ReturnStmt *RS, CheckerContext &C) const;
+  void checkDeadSymbols(SymbolReaper &SR, CheckerContext &C) const;
 };
 
 /// A lightweight polymorphic wrapper around FieldRegion *. We'll use this
@@ -349,8 +362,10 @@ inline FieldChainInfo FieldChainInfo::replaceHead(const FieldNodeT &FN) {
   FieldChainInfo NewChain(ChainFactory, Chain.getTail());
   return NewChain.add(FN);
 }
+void registerUninitializedObjectChecker(CheckerManager &Mgr);
 
 } // end of namespace ento
 } // end of namespace clang
+
 
 #endif // LLVM_CLANG_STATICANALYZER_UNINITIALIZEDOBJECT_H

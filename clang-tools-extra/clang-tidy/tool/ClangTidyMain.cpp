@@ -27,6 +27,7 @@
 #include "llvm/Support/TargetSelect.h"
 #include "llvm/Support/WithColor.h"
 #include <optional>
+#include "iostream"
 
 using namespace clang::tooling;
 using namespace llvm;
@@ -95,8 +96,11 @@ Configuration files:
 )");
 
 const char DefaultChecks[] = // Enable these checks by default:
-    "clang-diagnostic-*,"    //   * compiler diagnostics
-    "clang-analyzer-*";      //   * Static Analyzer checks
+    //"clang-diagnostic-*,"    //   * compiler diagnostics
+    //"clang-analyzer-*,"      //   * Static Analyzer checks
+    "-clang-analyzer-*,"
+    "clang-analyzer-tlohse.*,"      //   * My selection of Static Analyzer checks
+    "tlohse-*";              //   * My stuff
 
 static cl::opt<std::string> Checks("checks", desc(R"(
 Comma-separated list of globs with optional '-'

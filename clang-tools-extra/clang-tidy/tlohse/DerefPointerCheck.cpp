@@ -8,7 +8,6 @@
 
 #include "DerefPointerCheck.h"
 #include "clang/ASTMatchers/ASTMatchFinder.h"
-#include "iostream"
 
 using namespace clang::ast_matchers;
 

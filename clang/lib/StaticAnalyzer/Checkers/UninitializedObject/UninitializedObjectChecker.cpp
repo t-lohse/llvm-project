@@ -21,7 +21,6 @@
 #include "UninitializedObject.h"
 #include "clang/ASTMatchers/ASTMatchFinder.h"
 #include "clang/Driver/DriverDiagnostic.h"
-#include "clang/StaticAnalyzer/Core/BugReporter/BugType.h"
 #include "clang/StaticAnalyzer/Core/Checker.h"
 #include "clang/StaticAnalyzer/Core/PathSensitive/CheckerContext.h"
 #include "clang/StaticAnalyzer/Core/PathSensitive/DynamicType.h"
@@ -36,17 +35,7 @@ REGISTER_SET_WITH_PROGRAMSTATE(AnalyzedRegions, const MemRegion *)
 
 namespace {
 
-class UninitializedObjectChecker
-    : public Checker<check::EndFunction, check::DeadSymbols> {
-  const BugType BT_uninitField{this, "Uninitialized fields"};
 
-public:
-  // The fields of this struct will be initialized when registering the checker.
-  UninitObjCheckerOptions Opts;
-
-  void checkEndFunction(const ReturnStmt *RS, CheckerContext &C) const;
-  void checkDeadSymbols(SymbolReaper &SR, CheckerContext &C) const;
-};
 
 /// A basic field type, that is not a pointer or a reference, it's dynamic and
 /// static type is the same.

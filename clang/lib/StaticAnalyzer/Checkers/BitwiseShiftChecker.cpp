@@ -12,12 +12,13 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include "clang/StaticAnalyzer/Checkers/BitwiseShiftChecker.h"
+
 #include "clang/AST/ASTContext.h"
 #include "clang/AST/CharUnits.h"
 #include "clang/StaticAnalyzer/Checkers/BuiltinCheckerRegistration.h"
 #include "clang/StaticAnalyzer/Core/BugReporter/BugReporter.h"
 #include "clang/StaticAnalyzer/Core/BugReporter/BugType.h"
-#include "clang/StaticAnalyzer/Core/Checker.h"
 #include "clang/StaticAnalyzer/Core/CheckerManager.h"
 #include "clang/StaticAnalyzer/Core/PathSensitive/APSIntType.h"
 #include "clang/StaticAnalyzer/Core/PathSensitive/CheckerContext.h"
@@ -343,11 +344,8 @@ BitwiseShiftValidator::createBugReport(StringRef ShortMsg, StringRef Msg) const 
 }
 } // anonymous namespace
 
-class BitwiseShiftChecker : public Checker<check::PreStmt<BinaryOperator>> {
-  BugType BT{this, "Bitwise shift", "Suspicious operation"};
 
-public:
-  void checkPreStmt(const BinaryOperator *B, CheckerContext &Ctx) const {
+  void BitwiseShiftChecker::checkPreStmt(const BinaryOperator *B, CheckerContext &Ctx) const {
     BinaryOperator::Opcode Op = B->getOpcode();
 
     if (Op != BO_Shl && Op != BO_Shr)
@@ -355,9 +353,6 @@ public:
 
     BitwiseShiftValidator(B, Ctx, BT, Pedantic).run();
   }
-
-  bool Pedantic = false;
-};
 
 void ento::registerBitwiseShiftChecker(CheckerManager &Mgr) {
   auto *Chk = Mgr.registerChecker<BitwiseShiftChecker>();

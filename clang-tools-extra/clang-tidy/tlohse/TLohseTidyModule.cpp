@@ -57,8 +57,8 @@ namespace tlohse {
 class TLohseModule : public ClangTidyModule {
 public:
   void addCheckFactories(ClangTidyCheckFactories &CheckFactories) override {
-    CheckFactories.registerCheck<DerefPointerCheck>(
-        "tlohse-deref-pointer");
+    // TODO: Either remove file or implement something
+    //CheckFactories.registerCheck<DerefPointerCheck>("tlohse-deref-pointer");
 
     // -- Bugprone alias --
     //CheckFactories.registerCheck<>("bugprone-bitwise-pointer-cast");
